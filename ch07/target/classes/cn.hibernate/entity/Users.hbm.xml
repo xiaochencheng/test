@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.hibernate.entity.User" table="USERS">
+		<id name="ID" column="ID" type="java.lang.Integer">
+			<generator class="assigned" />
+		</id>
+		<property name="NAME" type="java.lang.String" column="NAME" />
+		<property name="PASSWORD" type="java.lang.String">
+			<column name="PASSWORD"></column>
+		</property>
+		<property name="TELEPHONE" type="java.lang.String" column="TELEPHONE" />
+		<property name="USERNAME" type="java.lang.String" column="USERNAME" />
+		<property name="ISADMIN" type="java.lang.Integer" column="ISADMIN" />
+	</class>
+</hibernate-mapping>

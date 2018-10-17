@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.hibernate.entity.House" table="HOUSE">
+		<id name="ID" column="ID" type="java.lang.Integer">
+			<generator class="assigned" />
+		</id>
+		<property name="USER_ID" type="java.lang.Integer" column="USER_ID" />
+		<property name="TYPE_ID" type="java.lang.Integer">
+			<column name="TYPE_ID"></column>
+		</property>
+		<property name="TITLE" type="java.lang.String" column="TITLE" />
+		<property name="DESCRIPTION" type="java.lang.String" column="DESCRIPTION" />
+		<property name="PRICE" type="java.lang.Double" column="PRICE" />
+		<property name="PUBDATE" type="java.util.Date" column="PUBDATE" />
+		<property name="FLOORAGE" type="java.lang.Integer" column="FLOORAGE" />
+		<property name="CONTACT" type="java.lang.String" column="CONTACT" />
+		<property name="STREET_ID" type="java.lang.Integer" column="STREET_ID" />
+		<many-to-one  class="cn.hibernate.entity.User" name="user" column="ID" insert="false" update="false"></many-to-one>
+	</class>
+</hibernate-mapping>

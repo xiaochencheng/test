@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.hibernate.entity.Dept" table="DEPT">
+		<id name="deptNo" column="DEPTNO" type="java.lang.Integer">
+			<generator class="assigned" />
+		</id>
+		<property name="deptName" type="java.lang.String" column="DNAME" />
+		<property name="location" type="java.lang.String">
+			<column name="LOC"></column>
+		</property>
+        <set name="emps" cascade="delete" inverse="true">
+			<key column="deptNo"></key>
+			<one-to-many class="cn.hibernate.entity.Emp"/>
+		</set>
+	</class>
+</hibernate-mapping>

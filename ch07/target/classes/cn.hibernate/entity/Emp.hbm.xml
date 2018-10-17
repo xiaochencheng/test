@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.hibernate.entity.Emp" table="EMP">
+		<id name="EMPNO" column="EMPNO" type="java.lang.Integer">
+			<generator class="increment" />
+		</id>
+		<property name="ENAME" type="java.lang.String" column="ENAME" />
+		<property name="JOB" type="java.lang.String">
+			<column name="JOB"></column>
+		</property>
+		<property name="MGR" type="java.lang.Long" column="MGR" />
+		<property name="HIREDATE" type="java.util.Date" column="HIREDATE" />
+		<property name="SAL" type="java.lang.Long" column="SAL" />
+		<property name="COMM" type="java.lang.Long" column="COMM" />
+		<!--<property name="DEPTNO" type="java.lang.Long" column="DEPTNO" />-->
+		<many-to-one name="dept" column="DEPTNO" class="cn.hibernate.entity.Dept"/>
+	</class>
+</hibernate-mapping>
